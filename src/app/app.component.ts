@@ -6,9 +6,15 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
+  // Ignore error message involving "EOF" :)
+  template: `
+    @if (true) {
+      True if content
+    } @else {
+      Else if content
+    }
+  `,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'template-changes';
 }
